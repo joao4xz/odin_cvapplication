@@ -28,20 +28,20 @@ export default function EditEducation() {
           />
         </label>
         <div>
-          <label className="mr-3" htmlFor="startDate">
+          <label className="mr-3" htmlFor="educationStartDate">
             Start Date:
             <input
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
-              name="startDate"
+              name="educationStartDate"
             />
           </label>
-          <label className="" htmlFor="endDate">
+          <label className="" htmlFor="educationEndDate">
             End Date:
             <input
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
-              name="endDate"
+              name="educationEndDate"
             />
           </label>
         </div>
