@@ -9,6 +9,7 @@ export default function EditEducation() {
             className="rounded-lg bg-slate-200"
             type="text"
             name="university"
+            id="university"
           />
         </label>
         <label className="flex flex-col" htmlFor="educationLocation">
@@ -17,6 +18,7 @@ export default function EditEducation() {
             className="rounded-lg bg-slate-200"
             type="text"
             name="educationLocation"
+            id="educationLocation"
           />
         </label>
         <label className="flex flex-col" htmlFor="degree">
@@ -25,6 +27,7 @@ export default function EditEducation() {
             className="rounded-lg bg-slate-200"
             type="text"
             name="degree"
+            id="degree"
           />
         </label>
         <div>
@@ -34,6 +37,7 @@ export default function EditEducation() {
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
               name="educationStartDate"
+              id="educationStartDate"
             />
           </label>
           <label className="" htmlFor="educationEndDate">
@@ -42,6 +46,7 @@ export default function EditEducation() {
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
               name="educationEndDate"
+              id="educationEndDate"
             />
           </label>
         </div>

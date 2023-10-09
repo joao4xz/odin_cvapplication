@@ -9,6 +9,7 @@ export default function EditExperience() {
             className="rounded-lg bg-slate-200"
             type="text"
             name="jobTitle"
+            id="jobTitle"
           />
         </label>
         <label className="flex flex-col" htmlFor="experienceLocation">
@@ -17,6 +18,7 @@ export default function EditExperience() {
             className="rounded-lg bg-slate-200"
             type="text"
             name="experienceLocation"
+            id="experienceLocation"
           />
         </label>
         <label className="flex flex-col" htmlFor="description">
@@ -24,6 +26,7 @@ export default function EditExperience() {
           <textarea
             className="bg-slate-200 rounded-lg min-h-[24px]"
             name="description"
+            id="description"
           ></textarea>
         </label>
         <div>
@@ -33,6 +36,7 @@ export default function EditExperience() {
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
               name="experienceStartDate"
+              id="experienceStartDate"
             />
           </label>
           <label className="" htmlFor="experienceEndDate">
@@ -41,6 +45,7 @@ export default function EditExperience() {
               className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
               type="text"
               name="experienceEndDate"
+              id="experienceEndDate"
             />
           </label>
         </div>
