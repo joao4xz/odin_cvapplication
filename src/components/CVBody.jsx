@@ -2,18 +2,24 @@ function SectionTitle({ title }) {
   return <h2 className="text-xl border-b border-slate-950">{title}</h2>;
 }
 
-function EducationSection() {
+function EducationSection({ education }) {
   return (
     <div className="flex flex-col gap-1">
       <SectionTitle title="Education"></SectionTitle>
-      <div className="grid grid-cols-[1fr_auto] items-center">
-        <div className="font-bold">Columbia University</div>
-        <div className="text-sm italic justify-self-end">New York, US</div>
-        <div className="text-sm italic">Bachelor in Computer Science</div>
-        <div className="text-sm italic justify-self-end">
-          Ago. 2019 - Jul. 2023
-        </div>
-      </div>
+      {education.map((uni) => {
+        return (
+          <div key={uni.key} className="grid grid-cols-[1fr_auto] items-center">
+            <div className="font-bold">{uni.university}</div>
+            <div className="text-sm italic justify-self-end">
+              {uni.location}
+            </div>
+            <div className="text-sm italic">{uni.degree}</div>
+            <div className="text-sm italic justify-self-end">
+              {uni.startDate} - {uni.endDate}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -52,10 +58,10 @@ function ExperienceSection() {
   );
 }
 
-export default function CVBody() {
+export default function CVBody({ education }) {
   return (
     <>
-      <EducationSection></EducationSection>
+      <EducationSection education={education}></EducationSection>
       <ExperienceSection></ExperienceSection>
     </>
   );
