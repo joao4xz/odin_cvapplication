@@ -7,9 +7,11 @@ export default function EditSection({
   setPersonalData,
   education,
   setEducation,
+  experience,
+  setExperience,
 }) {
   return (
-    <div className="min-h-[800px] m-10 min-w-[400px] flex flex-col gap-6">
+    <div className="min-h-[800px] m-10 min-w-[500px] flex flex-col gap-6">
       <EditPersonal
         personalData={personalData}
         setPersonalData={setPersonalData}
@@ -18,7 +20,10 @@ export default function EditSection({
         education={education}
         setEducation={setEducation}
       ></EditEducation>
-      <EditExperience></EditExperience>
+      <EditExperience
+        experience={experience}
+        setExperience={setExperience}
+      ></EditExperience>
     </div>
   );
 }

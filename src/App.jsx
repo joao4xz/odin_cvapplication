@@ -29,6 +29,27 @@ function App() {
     },
   ]);
 
+  const [experience, setExperience] = useState([
+    {
+      jobTitle: 'Software Engineer Intern - Amazon',
+      location: 'New York, US',
+      description:
+        'As an Amazon software engineer intern, I worked on full-stack development using AWS, Java, JavaScript, and DynamoDB. I optimized system performance and contributed to robust, high-availability solutions.',
+      startDate: 'Aug. 2023',
+      endDate: 'Oct. 2023',
+      key: 0,
+    },
+    {
+      jobTitle: 'Software Engineer Intern - Netflix',
+      location: 'New York, US',
+      description:
+        'As a Netflix software engineer intern, I focused on full-stack development, applying technologies like Node.js, React, and AWS to enhance streaming services. I contributed to performance optimizations and innovative features.',
+      startDate: 'Jan. 2023',
+      endDate: 'Present',
+      key: 1,
+    },
+  ]);
+
   return (
     <div className="min-h-screen flex justify-center">
       <EditSection
@@ -36,8 +57,14 @@ function App() {
         setPersonalData={setPersonalDetails}
         education={education}
         setEducation={setEducation}
+        experience={experience}
+        setExperience={setExperience}
       ></EditSection>
-      <CV personalData={personalDetails} education={education}></CV>
+      <CV
+        personalData={personalDetails}
+        education={education}
+        experience={experience}
+      ></CV>
     </div>
   );
 }

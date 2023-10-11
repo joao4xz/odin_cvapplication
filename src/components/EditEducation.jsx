@@ -73,11 +73,11 @@ function Education({ uni, education, setEducation }) {
               }
             />
           </label>
-          <div>
-            <label className="mr-3" htmlFor={`educationStartDate${uni.key}`}>
+          <div className="flex justify-between">
+            <label htmlFor={`educationStartDate${uni.key}`}>
               Start Date:
               <input
-                className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
+                className="rounded-lg bg-slate-200 w-[120px] ml-2 mt-2"
                 type="text"
                 name={`educationStartDate${uni.key}`}
                 id={`educationStartDate${uni.key}`}
@@ -87,10 +87,10 @@ function Education({ uni, education, setEducation }) {
                 }
               />
             </label>
-            <label className="" htmlFor={`educationEndDate${uni.key}`}>
+            <label htmlFor={`educationEndDate${uni.key}`}>
               End Date:
               <input
-                className="rounded-lg bg-slate-200 w-[130px] ml-2 mt-2"
+                className="rounded-lg bg-slate-200 w-[120px] ml-2 mt-2"
                 type="text"
                 name={`educationEndDate${uni.key}`}
                 id={`educationEndDate${uni.key}`}
