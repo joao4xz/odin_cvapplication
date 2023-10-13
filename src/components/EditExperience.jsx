@@ -16,6 +16,22 @@ function updateExperience(event, experience, setExperience, property) {
   setExperience(updatedExperience);
 }
 
+function createExperince(experience, setExperience) {
+  const newExperience = {
+    jobTitle: 'Software Engineer Intern - Amazon',
+    location: 'New York, US',
+    description:
+      'As an Amazon software engineer intern, I worked on full-stack development using AWS, Java, JavaScript, and DynamoDB. I optimized system performance and contributed to robust, high-availability solutions.',
+    startDate: 'Aug. 2023',
+    endDate: 'Oct. 2023',
+    key: experience.length,
+  };
+
+  console.log(newExperience.key);
+
+  setExperience((experience) => [...experience, newExperience]);
+}
+
 function Experience({ job, experience, setExperience }) {
   const [hide, setHide] = useState(true);
   return (
@@ -134,7 +150,13 @@ export default function EditExperience({ experience, setExperience }) {
         })}
       </form>
       <div className="w-full flex justify-center mt-2">
-        <button type="button" className="bg-slate-200 rounded-3xl">
+        <button
+          onClick={() => {
+            createExperince(experience, setExperience);
+          }}
+          type="button"
+          className="bg-slate-200 rounded-3xl"
+        >
           <Icon path={mdilPlus} size={1} />
         </button>
       </div>

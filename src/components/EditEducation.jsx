@@ -26,7 +26,6 @@ function createEducation(education, setEducation) {
     key: education.length,
   };
 
-  console.log(newEducation.key);
   setEducation((education) => [...education, newEducation]);
 }
 
