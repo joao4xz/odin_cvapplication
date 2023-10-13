@@ -1,6 +1,7 @@
 import Icon from '@mdi/react';
 import { mdilChevronDown } from '@mdi/light-js';
 import { mdilChevronLeft } from '@mdi/light-js';
+import { mdilPlus } from '@mdi/light-js';
 import { useState } from 'react';
 
 function updateEducation(event, education, setEducation, property) {
@@ -13,6 +14,20 @@ function updateEducation(event, education, setEducation, property) {
   };
 
   setEducation(updatedEducation);
+}
+
+function createEducation(education, setEducation) {
+  const newEducation = {
+    university: 'Columbia University',
+    location: 'New York, US',
+    degree: 'Bachelor in Computer Science',
+    startDate: 'Aug. 2019',
+    endDate: 'Jul. 2023',
+    key: education.length,
+  };
+
+  console.log(newEducation.key);
+  setEducation((education) => [...education, newEducation]);
 }
 
 function Education({ uni, education, setEducation }) {
@@ -123,6 +138,17 @@ export default function EditEducation({ education, setEducation }) {
           );
         })}
       </form>
+      <div className="w-full flex justify-center mt-2">
+        <button
+          onClick={() => {
+            createEducation(education, setEducation);
+          }}
+          type="button"
+          className="bg-slate-200 rounded-3xl"
+        >
+          <Icon path={mdilPlus} size={1} />
+        </button>
+      </div>
     </div>
   );
 }

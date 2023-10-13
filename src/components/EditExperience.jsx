@@ -1,6 +1,7 @@
 import Icon from '@mdi/react';
 import { mdilChevronDown } from '@mdi/light-js';
 import { mdilChevronLeft } from '@mdi/light-js';
+import { mdilPlus } from '@mdi/light-js';
 import { useState } from 'react';
 
 function updateExperience(event, experience, setExperience, property) {
@@ -132,6 +133,11 @@ export default function EditExperience({ experience, setExperience }) {
           );
         })}
       </form>
+      <div className="w-full flex justify-center mt-2">
+        <button type="button" className="bg-slate-200 rounded-3xl">
+          <Icon path={mdilPlus} size={1} />
+        </button>
+      </div>
     </div>
   );
 }
