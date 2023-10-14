@@ -1,6 +1,7 @@
 import Icon from '@mdi/react';
 import { mdilChevronDown } from '@mdi/light-js';
 import { mdilChevronLeft } from '@mdi/light-js';
+import { mdilDelete } from '@mdi/light-js';
 import { mdilPlus } from '@mdi/light-js';
 import { useState } from 'react';
 
@@ -25,27 +26,50 @@ function createExperince(experience, setExperience) {
     startDate: 'Aug. 2023',
     endDate: 'Oct. 2023',
     key: experience.length,
+    deleted: false,
   };
-
-  console.log(newExperience.key);
 
   setExperience((experience) => [...experience, newExperience]);
 }
 
+function deleteExperience(event, experience, setExperience) {
+  const index = event.target.closest('button').id.slice(-1);
+  const updatedExperience = [...experience];
+
+  updatedExperience[index] = {
+    ...updatedExperience[index],
+    deleted: true,
+  };
+
+  setExperience(updatedExperience);
+}
+
 function Experience({ job, experience, setExperience }) {
   const [hide, setHide] = useState(true);
-  return (
+  return job.deleted ? null : (
     <div key={job.key} className="p-1">
-      <button
-        className="flex w-full justify-between items-center bg-slate-200 text-lg font-bold px-2 rounded-sm min-h-[28px]"
-        type="button"
-        onClick={() => {
-          setHide(!hide);
-        }}
-      >
+      <div className="flex w-full justify-between items-center bg-slate-200 text-lg font-bold px-2 rounded-sm min-h-[28px]">
         <div>{job.jobTitle}</div>
-        <Icon path={hide ? mdilChevronLeft : mdilChevronDown} size={1} />
-      </button>
+        <div className="flex gap-1 items-center">
+          <button
+            id={`deleteButton${job.key}`}
+            type="button"
+            onClick={(event) =>
+              deleteExperience(event, experience, setExperience)
+            }
+          >
+            <Icon path={mdilDelete} size={1} />
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setHide(!hide);
+            }}
+          >
+            <Icon path={hide ? mdilChevronLeft : mdilChevronDown} size={1} />
+          </button>
+        </div>
+      </div>
       {hide ? undefined : (
         <div className="flex flex-col gap-2 p-3">
           <label className="flex flex-col" htmlFor={`jobTitle${job.key}`}>

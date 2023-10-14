@@ -40,6 +40,7 @@ function App() {
       startDate: 'Aug. 2023',
       endDate: 'Oct. 2023',
       key: 0,
+      deleted: false,
     },
     {
       jobTitle: 'Software Engineer Intern - Netflix',
@@ -49,6 +50,7 @@ function App() {
       startDate: 'Jan. 2023',
       endDate: 'Present',
       key: 1,
+      deleted: false,
     },
   ]);
 

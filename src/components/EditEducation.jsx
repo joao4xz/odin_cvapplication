@@ -54,9 +54,6 @@ function Education({ uni, education, setEducation }) {
             id={`deleteButton${uni.key}`}
             type="button"
             onClick={(event) => deleteEducation(event, education, setEducation)}
-            // onClick={() => {
-            //   setDeleted(true);
-            // }}
           >
             <Icon path={mdilDelete} size={1} />
           </button>

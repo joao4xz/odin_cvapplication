@@ -29,7 +29,7 @@ function ExperienceSection({ experience }) {
     <div className="flex flex-col gap-2">
       <SectionTitle title="Experience"></SectionTitle>
       {experience.map((job) => {
-        return (
+        return job.deleted ? null : (
           <div
             key={job.key}
             className="grid grid-cols-[1fr_auto] items-center gap-x-2"
