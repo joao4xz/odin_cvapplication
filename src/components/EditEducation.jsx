@@ -1,6 +1,7 @@
 import Icon from '@mdi/react';
 import { mdilChevronDown } from '@mdi/light-js';
 import { mdilChevronLeft } from '@mdi/light-js';
+import { mdilDelete } from '@mdi/light-js';
 import { mdilPlus } from '@mdi/light-js';
 import { useState } from 'react';
 
@@ -24,25 +25,51 @@ function createEducation(education, setEducation) {
     startDate: 'Aug. 2019',
     endDate: 'Jul. 2023',
     key: education.length,
+    deleted: false,
   };
 
   setEducation((education) => [...education, newEducation]);
 }
 
+function deleteEducation(event, education, setEducation) {
+  const index = event.target.closest('button').id.slice(-1);
+  const updatedEducation = [...education];
+
+  updatedEducation[index] = {
+    ...updatedEducation[index],
+    deleted: true,
+  };
+
+  setEducation(updatedEducation);
+}
+
 function Education({ uni, education, setEducation }) {
   const [hide, setHide] = useState(true);
-  return (
+  return uni.deleted ? null : (
     <div key={uni.key} className="p-1">
-      <button
-        className="flex w-full justify-between items-center bg-slate-200 text-lg font-bold px-2 rounded-sm min-h-[28px]"
-        type="button"
-        onClick={() => {
-          setHide(!hide);
-        }}
-      >
+      <div className="flex w-full justify-between items-center bg-slate-200 text-lg font-bold px-2 rounded-sm min-h-[28px]">
         <div>{uni.university}</div>
-        <Icon path={hide ? mdilChevronLeft : mdilChevronDown} size={1} />
-      </button>
+        <div className="flex gap-1 items-center">
+          <button
+            id={`deleteButton${uni.key}`}
+            type="button"
+            onClick={(event) => deleteEducation(event, education, setEducation)}
+            // onClick={() => {
+            //   setDeleted(true);
+            // }}
+          >
+            <Icon path={mdilDelete} size={1} />
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setHide(!hide);
+            }}
+          >
+            <Icon path={hide ? mdilChevronLeft : mdilChevronDown} size={1} />
+          </button>
+        </div>
+      </div>
       {hide ? undefined : (
         <div className="flex flex-col gap-2 p-3">
           <label className="flex flex-col" htmlFor={`university${uni.key}`}>

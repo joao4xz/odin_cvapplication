@@ -18,6 +18,7 @@ function App() {
       startDate: 'Aug. 2019',
       endDate: 'Jul. 2023',
       key: 0,
+      deleted: false,
     },
     {
       university: 'Stanford University',
@@ -26,6 +27,7 @@ function App() {
       startDate: 'Sep. 2018',
       endDate: 'Jun. 2022',
       key: 1,
+      deleted: false,
     },
   ]);
 

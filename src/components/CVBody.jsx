@@ -7,7 +7,7 @@ function EducationSection({ education }) {
     <div className="flex flex-col gap-1">
       <SectionTitle title="Education"></SectionTitle>
       {education.map((uni) => {
-        return (
+        return uni.deleted ? null : (
           <div key={uni.key} className="grid grid-cols-[1fr_auto] items-center">
             <div className="font-bold">{uni.university}</div>
             <div className="text-sm italic justify-self-end">
