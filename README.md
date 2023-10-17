@@ -1,8 +1,41 @@
-# React + Vite
+# CV Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![image](https://github.com/joao4xz/odin_cvapplication/assets/117238473/81791a4b-c015-487c-94bb-e3f17429c57d)
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="https://odin-cvapplication.vercel.app/">Live Preview</a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+"The Odin Project" CV application project.
+
+This project serves as an implementation of a CV application using ReactJS and TailwindCSS.
+
+## Installation
+To get the project up and running on your local machine, follow these steps:
+
+1. Clone the repository:
+    ```shell
+    git clone https://github.com/joao4xz/odin_cvapplication.git
+    ```
+2. Navigate to the project directory:
+    ```shell
+    cd odin_cvapplication
+    ```
+3. Install the dependencies:
+     ```shell
+     npm install
+     ```
+## Usage
+
+### Development
+To run the development server, use the following command:
+```shell
+npm run dev
+```
+This command will start the development server, and you can access the application at http://localhost:3000.
+
+### Build
+To generate the production-ready files in the dist folder, use the following command:
+```shell
+npm run build
+```
